@@ -1,11 +1,13 @@
 import puppeteer, { Page } from "puppeteer";
 import PlayGame from "./play";
 import { alertPage, sleep} from "./utils";
+import dotenv from 'dotenv';
+dotenv.config();
 
 //NEED TO CHANGE THESE TWO LINES FOR THE BOT TO WORK
 /***************************************************************************************************************************************************/
-const paused = true
-const extensionPath = "C:\\Users\\YOUR_PC_NAME\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\bhhhlbepdkbapadjdnnojkbgioiodbic\\1.52.0_0";
+const paused = false
+const extensionPath = process.env.EXTENTION_PATH; //created .env file to keep extension path secret.
 /***************************************************************************************************************************************************/
 
 
@@ -115,3 +117,5 @@ async function initializeGame(page: Page) {
   await page.mouse.click(centerX, centerY + 100);
   await sleep(6000);
 }
+
+export { extensionPath };

@@ -9,6 +9,7 @@
     "base58-js": "^2.0.0",
     "bs58": "^5.0.0",
     "buffer": "^6.0.3",
+    "dotenv": "^16.3.1",
     "puppeteer": "^20.1.0"
   },
   "devDependencies": {

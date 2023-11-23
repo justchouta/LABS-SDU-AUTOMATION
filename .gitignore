@@ -3,3 +3,4 @@ node_modules
 user_data
 .DS_Store
 data.json
+.env //added in ignore for secrets file
