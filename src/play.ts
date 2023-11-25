@@ -31,18 +31,20 @@ export default class PlayGame {
     this.centerY = this.height / 2;
 
     this.sectorScanX = this.centerX + 500;
-    this.sectorScanY = this.centerY + 320;
+    this.sectorScanY = this.centerY + 250;
 
     //this.firstScanX = this.centerX + 550;
     //this.firstScanY = this.centerY +  340;
 
     this.bottomScanX = this.centerX + 550;
-    this.bottomScanY = this.centerY +  380;
+    this.bottomScanY = this.centerY +  290;
   }
 
   async startPlaying(){
     await this.page.mouse.wheel({deltaY: 200})
     await sleep(1000);
+
+    console.log("Clicking Sector Survey at: ", this.sectorScanX, this.sectorScanY);
     await this.page.mouse.click(this.sectorScanX, this.sectorScanY)
     await sleep(1000)
 
@@ -55,8 +57,12 @@ export default class PlayGame {
   }
 
   private async scan(page: Page) {
-    await this.page.mouse.click(this.centerX + 520,this.centerY + 370)
-    await sleep(121000);
-
+    const clickScanX = this.centerX + 520;
+    const clickScanY = this.centerY + 290;
+  
+    console.log("Clicking at scan coordinates: ", clickScanX, clickScanY);
+    await this.page.mouse.click(clickScanX, clickScanY)
+    await sleep(40000);
   }
+  
 }
