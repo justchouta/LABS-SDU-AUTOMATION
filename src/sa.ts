@@ -162,27 +162,32 @@ async function initializeGame(page: Page) {
   const centerY = height / 2;
 
 
-  // connect wallet
+  // Connect Wallet
+  console.log("Clicking Connect Wallet at: ", centerX, centerY + 250);
   await page.mouse.click(centerX, centerY +  250);
   await sleep(2000);
  
 
   // Launch Game
+  console.log("Clicking Launch Game at: ", centerX, centerY + 100);
   await page.mouse.click(centerX, centerY + 100);
   await sleep(2000);
  
 
   // Select Wallet
+  console.log("Clicking Select Wallet at: ", centerX, centerY - 50);
   await page.mouse.click(centerX, centerY - 50);
   await sleep(5000);
 
 
-//Connect
+  // Connect
+  console.log("Clicking Connect at: ", centerX, centerY - 50);
   await page.mouse.click(centerX, centerY + 210);
   await sleep(8000);
 
 
-  //Play Game
+  // Play Game
+  console.log("Clicking Play Game at: ", centerX, centerY - 50);
   await page.mouse.click(centerX, centerY + 100);
   await sleep(6000);
 }
