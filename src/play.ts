@@ -62,7 +62,7 @@ export default class PlayGame {
   
     console.log("Clicking at scan coordinates: ", clickScanX, clickScanY);
     await this.page.mouse.click(clickScanX, clickScanY)
-    await sleep(40000);
+    await sleep(45000);
   }
   
 }
